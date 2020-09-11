@@ -1,15 +1,11 @@
-const express = require('express')
+const express = require('express');
+const ProjectsRouter = require('./projects/projects-router.js')
 
-const [ROUTER]= require('./routers/[ROUTER.js]') //CHANGE321
 
-const server = express()
+const server = express();
 
-server.use(express.json())
-server.use(helmet())
-server.use('/api/[ROUTER_PATH]', [ROUTER]) //CHANGE321
+server.use(express.json());
+server.use('/api', ProjectsRouter)
 
-server.get('/', (req, res) => {
-  res.status(200).json({ Victor_Frankenstein: 'It LIVEEEESSSSSSS' })
-})
 
-module.exports = server
+module.exports = server;
